@@ -1,0 +1,23 @@
+Firstly, let's define what is what:
+
+Recovery - When a system detects the deadlock it can recover from it in two ways:
+    1. kill one of the process  
+    2. get the required resource from other process 
+
+Prevention - System can be structured in deadlock-free way( prevent at least one condition to hold). Conditions for deadlock:
+    1. mutual exclusion
+    2. hold & wait strategy for using the resource
+    3. non-preemptable resource
+    4. circular dependencies
+
+Avoidance - System can detect dynamically that next process to be executed can cause deadlock. For doing so it can use Banker's algorithm.
+
+Then let's compare them
+
+Recovery is the simplest way. It can be a better choice when we don't know (cannot estimate) in advance process requirements and resource availability. But sometimes recovery cannot solve the problem(unkillable process, non-preemptable resource).
+
+Prevention is more robust technique that will always work if the system structured correctly. However, it's not alwaws possible to construct it that way, and even suitable one can be too restricted.
+
+Avoidance is a good choice for dynamic systems. Depends on the resource availability, system can be restricted in less way than deadlock prevention. However, ideal avoidance is impossible because process requirements are undecidable.
+
+
